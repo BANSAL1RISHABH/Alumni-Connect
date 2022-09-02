@@ -1,0 +1,10 @@
+{
+    "params": {
+        "remote_server": "True",
+        "remote_server_url": "alumniconnect.mysql.database.azure.com",
+        "website_title": "AlumniConnect",
+        "fb_url": "https://www.facebook.com/AlumniConnect",
+        "tw_url": "https://www.instagram.com/AlumniConnect",
+        "gh_url": "https://github.com/itsshivamsrivastava"
+    }
+}
