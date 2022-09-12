@@ -26,7 +26,7 @@ else:
 db = SQLAlchemy(app)
 
 @app.route("/")
-def home():
+def login():
     return render_template('index.html', params=params)
 
 @app.route("/alumni.html")

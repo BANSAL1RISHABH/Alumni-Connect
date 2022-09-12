@@ -2,6 +2,7 @@
     .modal-dialog {
         max-width: 400px;
     }
+
     .modal-content {
         padding: 1rem;
     }
@@ -19,10 +20,19 @@
     margin: -2rem 0rem 2rem;
 }
 
-.form-title h4{
+.form-title h4 {
     font-size: 2.5rem;
     font-weight: 500;
     color: #000000;
+}
+
+.signup-h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    justify-content: center;
+    margin: 3rem;
 }
 
 .btn-round {
@@ -37,16 +47,23 @@
     padding: 0.3rem 0rem;
     color: #000000;
 }
-.login-btn{
+
+.login-btn {
     margin-top: 2rem;
     margin-bottom: 1rem;
     width: 21rem;
-    color: #000000;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #17a2b8;
     padding: 0.4rem;
 }
 
-.login-form{
+.login-btn:hover {
+    background-color: cadetblue;
+    padding: 0.4rem;
+}
+
+.login-form {
     width: 21rem;
     margin: auto;
 }
@@ -55,20 +72,44 @@
     margin: auto;
     display: flex;
 }
-.form-group input[type="email"]{
+
+.form-group input[type="email"] {
     margin-bottom: 2rem;
 }
 
-.my-container{
+.my-container {
     margin-top: 5rem;
 }
 
-.my-card{
+.my-card {
     width: 33rem;
     top: -27rem;
     margin-left: 1.6rem;
     margin-right: 2rem;
+    color: #000000;
 }
-.card-body p{
+
+.card-body p {
     text-align: justify;
+}
+
+.heading-h3 {
+    width: 100%;
+    margin-top: -4rem;
+    margin-bottom: 3rem;
+}
+.heading-h3 h3 {
+    font-size: 2.7rem;
+    font-weight: 800;
+    text-align: center;
+    justify-content: center;
+}
+
+.heading-h3 p{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    width: 94%;
+    margin-left: 1.4rem;
 }
