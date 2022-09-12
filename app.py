@@ -52,7 +52,7 @@ def home():
 
 
 @app.route("/alumni_profile", methods=['GET', 'POST'])
-def login():
+def signup():
     if request.method == 'POST':
         '''Add entry to the database'''
         registration_no = request.form.get('reg_no')
@@ -73,7 +73,6 @@ def login():
 
         db.session.add(entry)
         db.session.commit()
-        flash("Thanks for registering with us. You can now login to your account.", "success")
 
     return render_template('alumni_profile.html', params=params)
 
