@@ -50,9 +50,8 @@ class AlumniStudents(db.Model):
 def home():
     return render_template('login_page.html', params=params)
 
-
 @app.route("/alumni_profile", methods=['GET', 'POST'])
-def signup():
+def alumniSignup():
     if request.method == 'POST':
         '''Add entry to the database'''
         registration_no = request.form.get('reg_no')
@@ -75,6 +74,12 @@ def signup():
         db.session.commit()
 
     return render_template('alumni_profile.html', params=params)
+
+@app.route("/alumni_profile", methods=['GET', 'POST'])
+def alumniLogin():
+    pass
+
+
 
 @ app.route("/about")
 def about():
