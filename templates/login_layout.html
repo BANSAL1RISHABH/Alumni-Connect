@@ -22,7 +22,8 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img src="{{ url_for('static', filename='assets/images/main-logo.png') }}" class="bi me-2" alt="logo" width="200" height="50">
+                    <img src="{{ url_for('static', filename='assets/images/main-logo.png') }}" class="bi me-2"
+                        alt="logo" width="200" height="50">
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -34,11 +35,10 @@
                 <div class="text-end">
                     <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal"
                         data-bs-target="#loginModal">Sign In / Sign Up</button>
-                    <!-- <button type="button" class="btn btn-warning">Sign Up</button> -->
                 </div>
             </div>
-
         </div>
+
         <!-- Login Model -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -54,15 +54,25 @@
                                 class="bi me-2" width="150" height="150" style="display: inline-block;">
                         </div>
                         <div class="d-flex flex-column text-center">
-                            <form class="login-form" action="/alumni_profile" method="post">
+                            <form class="login-form" id="login" method="post" action="/login_validation">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="email1"
+                                    <input name="email" type="email" class="form-control" id="email1"
                                         placeholder="Your email address...">
                                 </div>
+
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="password1"
+                                    <input type="password" name="password" class="form-control" id="password1"
                                         placeholder="Your password...">
                                 </div>
+
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                    {% if messages %}
+                                        {% for category, message in messages %}
+                                            <div class="alert alert-{{ category }}" role="alert"> {{ message }}</div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+
                                 <button type="button" class="login-btn btn-round">Login</button>
                                 <span class="signup-section">
                                     Not a member yet?
@@ -73,9 +83,10 @@
                     </div>
                 </div>
             </div>
+        </div>
     </header>
 
-{% block body %} {% endblock %}
+    {% block body %} {% endblock %}
 
     <footer class="text-center text-lg-start bg-light text-muted">
         <!-- Section: Social media -->

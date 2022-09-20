@@ -1,9 +1,9 @@
+from flask import Flask, render_template, request, session, redirect, flash
 from enum import unique
 import math
 import os
 import json
 from datetime import datetime
-from flask import Flask, render_template, request, session, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
 import mysql.connector
@@ -75,11 +75,13 @@ def alumniSignup():
 
     return render_template('alumni_profile.html', params=params)
 
-@app.route("/alumni_profile", methods=['GET', 'POST'])
-def alumniLogin():
-    pass
-
-
+@app.route('/login_validation', methods=['POST'])
+def login_validation():
+    print("Method Called")
+    
+    return render_template('login_page.html', params=params)
+    
+    return "E-mail: {email}\nPassword: {password}".format(email, password)
 
 @ app.route("/about")
 def about():
